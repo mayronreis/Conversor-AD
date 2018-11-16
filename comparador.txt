@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity comparador is
+	port(A,B: in integer;
+
+	Y: out bit);  
+	END comparador;
+
+	architecture hardware of comparador is
+	begin
+	y <= '1' when (A>B) or (A=B) else '0'; 
+	
+END hardware;

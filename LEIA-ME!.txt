@@ -1,0 +1,3 @@
+Segue instruções para compilação do código: 
+
+O arquivo principal do projeto do Conversor-AD em VHDL tem o nome 'ConversorAD', nele há o código com a lógica de funcionamento do mesmo, onde nesse são criados os componentes 'comparador' e 'res_des'(Flip Flip D), nos quais as implementações de sua lógica de funcionamento estão nos arquivos respectivos. Para veririficar a compilação basta se criar um projeto principal com 'ConversorAD' e outros dois auxiliares 'comparador' e 'reg_des' nos quais são chamados dentro do projeto principal. 

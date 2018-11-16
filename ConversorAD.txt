@@ -1,0 +1,44 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity ConversorAD is
+Port ( inv1,inv2,inv3,inv4, in2 : in integer;
+out1,out2,out3, out4 : out bit); 
+
+end ConversorAD;
+
+architecture hardware of ConversorAD is
+
+	component comparador
+	
+	port(A,B: in integer;
+	Y: out bit);  
+	end component comparador;
+	
+	component reg_des
+	port(ck, ld      :     in      std_logic;
+	     d1, d2, d3, d4      :     in     bit;
+		  q1, q2, q3, q4      : buffer	  bit);	
+		  
+	end component reg_des;
+	
+	signal y1,y2,y3,y4: bit;
+	signal outf1,outf2, outf3,outf4 : bit;
+	signal clk,ld : std_logic;
+	
+	begin
+	comp1: comparador port map (inv1,in2,y1);
+	comp2: comparador port map (inv2,in2,y2);
+	comp3: comparador port map (inv3,in2,y3);
+	comp4: comparador port map (inv4,in2,y4);
+	
+	flip: reg_des port map (clk,ld,y1,y2,y3,y4,outf1,outf2,outf3,outf4);
+	
+	out1 <= outf1;
+	out2 <= outf2;
+	out3 <= outf3;
+	out4 <= outf4;
+	
+end hardware;
