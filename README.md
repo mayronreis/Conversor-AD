@@ -1,2 +1,2 @@
 # Conversor-AD
-Conversor Angiológico para Digital em VHDL.
+Conversor Analógico para Digital em VHDL.
